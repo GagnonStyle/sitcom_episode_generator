@@ -1,0 +1,21 @@
+%div
+	=form_tag 'home/generate', :remote => true do
+		%div#fields
+			=text_field_tag 'sitcom_title', nil, :placeholder => 'Title', :id => 'sitcom_title' 
+			%br
+			=text_field_tag 'cast_members[]', nil, :placeholder => 'Cast Member', :class => 'cast_member'
+			%br
+			=text_field_tag 'cast_members[]', nil, :placeholder => 'Cast Member', :class => 'cast_member'
+		%div
+			=link_to "Add New Cast Member", "", :id => 'add_new_cast_member'
+			%br
+			=submit_tag "Generate!", :id => 'submit_form'
+
+	%h2
+		%div#results
+
+:javascript
+	$('#add_new_cast_member').click(function(){
+		$('#fields').append('<br/> #{text_field_tag 'cast_members[]', nil, :placeholder => 'Cast Member', :class => 'cast_member'}');
+		return false;
+	});
