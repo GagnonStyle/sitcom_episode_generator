@@ -3,8 +3,15 @@ class HomeController < ApplicationController
   end
 
   def generate
-  	@name1 = params[:cast_members].sample
-  	@name2 = params[:cast_members].sample
-    render :template => 'home/generate.js.haml'
+  	params[:characters].reject! {|c| c.empty?}
+  	@name1 = params[:characters].sample
+  	params[:characters] = params[:characters] - [@name1]
+  	@name2 = params[:characters].sample
+
+  	@title = params[:title]
+
+  	@episode = rand(1..6)*100 + rand(1..30)
+
+    render :template => 'home/generate.js'
   end
 end

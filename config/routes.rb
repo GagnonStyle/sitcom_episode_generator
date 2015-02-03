@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  post 'home/generate' => 'home#generate', :defaults => {format: 'json'}
+  post 'home/generate' => 'home#generate'
 
 
   # Example of regular route:

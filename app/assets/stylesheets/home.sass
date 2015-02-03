@@ -1,0 +1,97 @@
+* //Set the font of all text
+	font-family: 'Roboto', sans-serif
+	font-weight: 300
+
+body
+	background: #9999ff
+
+.center
+	text-align: center
+	margin-left: auto
+	margin-right: auto
+
+.full_width
+	width: 100%
+
+.half_width
+	width: 50%
+
+.quarter_width
+	width: 25%
+
+.red 
+	background: red
+
+.circle 
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	display: inline-block
+	box-shadow: 1px 3px 2px #888888
+	position: absolute
+	right: -15px
+	top: -10px
+
+	img
+		width: 75%
+		height: 75%
+		margin-top: 5px
+
+.spin_up img
+	-webkit-animation: spin_up 500ms ease
+	-moz-animation: spin_up 500ms ease
+	animation: spin_up 500ms ease
+
+.spin_back img
+	-webkit-animation: spin_back 500ms ease
+	-moz-animation: spin_back 500ms ease
+	animation: spin_back 500ms ease
+
+#fields 
+	input
+		width: 25%
+		font-size: 20px
+		margin: 6px auto
+		padding: 6px
+		display: block
+		border: 0
+		border-radius: 3px
+		background: rgba(255,255,255,0.5)
+
+input[type=submit]
+	border: 1px solid black
+	border-radius: 4px
+	padding: 4px
+	background: orange
+
+input[type=submit]:hover
+	border: 1px solid orange
+	background: black
+	color: orange
+
+
+@-webkit-keyframes spin_up
+	100% 
+		-webkit-transform: rotate(360deg)
+
+@-moz-keyframes spin_up
+	100% 
+		-moz-transform: rotate(360deg)
+
+@keyframes spin_up
+	100% 
+		-moz-transform: rotate(360deg)
+
+@-webkit-keyframes spin_back
+	100% 
+		-webkit-transform: rotate(-360deg)
+
+@-moz-keyframes spin_back
+	100% 
+		-moz-transform: rotate(-360deg)
+
+@keyframes spin_back
+	100% 
+		-moz-transform: rotate(-360deg)
+
+
