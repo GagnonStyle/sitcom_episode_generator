@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   	params[:characters] = params[:characters] - [@name1]
   	@name2 = params[:characters].sample
 
-  	@title = params[:title]
+  	@title = Title.generate
 
   	@episode = rand(1..6)*100 + rand(1..30)
 
