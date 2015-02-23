@@ -4,13 +4,17 @@ class HomeController < ApplicationController
 
   def generate
   	params[:characters].reject! {|c| c.empty?}
-  	@name1 = params[:characters].sample
-  	params[:characters] = params[:characters] - [@name1]
-  	@name2 = params[:characters].sample
+    if params[:characters] == []
+      flash[:error] = 'Lets face it. You\'re not gonna get anywhere without any characters in your show.'
+    else
 
-  	@title = Title.generate
+      @title = Title.generate
 
-  	@episode = rand(1..6)*100 + rand(1..30)
+      @episode_number = Episode.generate_number
+
+      @episode_desc = Episode.generate_desc(params[:characters])
+
+    end
 
     render :template => 'home/generate.js'
   end

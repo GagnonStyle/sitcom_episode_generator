@@ -1,3 +1,6 @@
-$('#results').html(
-"#{@title} - Episode #{@episode}: #{@name1 + ' and ' + @name2} go to the store!!"
-);
+-if flash[:error]
+  show_flash("#{flash[:error].html_safe}");
+-else
+  $('#title').html("#{@title}");
+  $('#episode_number').html("Episode #{@episode_number}");
+  $('#episode_desc').html("#{@episode_desc}");
